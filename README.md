@@ -1,6 +1,6 @@
 # CL-BIP39
 
-CL-BIP39 is Common Lisp implementation of [BIP-0039](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#Generating_the_mnemonic) based on the [reference implementation](https://github.com/trezor/python-mnemonic).
+CL-BIP39 is Common Lisp implementation of [BIP-0039](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) based on the [reference implementation](https://github.com/trezor/python-mnemonic).
 
 The library exports the following symbols:
 
