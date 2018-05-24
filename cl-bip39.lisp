@@ -94,7 +94,7 @@
        :into mnemonic-list
        :finally (return (format nil "~{~A~^ ~}" mnemonic-list)))))
 
-(defun check-bip39-mnemonic (mnemonic)
+(defun bip39-mnemonic-p (mnemonic)
   (let* ((mnemonic-list (split-mnemonic mnemonic))
          (ent+cs-bit-string
           (format nil "~{~11,'0B~}"
@@ -108,7 +108,7 @@
              (checksum-to-bit-string (sha256 entropy) (length ent-bit-string)))))
 
 (defun bip39-mnemonic-to-seed (mnemonic &optional passphase)
-  (check-bip39-mnemonic mnemonic)
+  (bip39-mnemonic-p mnemonic)
   (ironclad:byte-array-to-hex-string
    (ironclad:pbkdf2-hash-password (trivial-utf-8:string-to-utf-8-bytes mnemonic)
                                   :salt (trivial-utf-8:string-to-utf-8-bytes
