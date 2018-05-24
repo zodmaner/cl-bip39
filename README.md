@@ -46,10 +46,10 @@ CL-USER> (cl-bip39:generate-bip39-seed *mnemonic*)
 
 ## Dependencies
 
-* **secure-random**
-* **ironclad**
-* **split-sequence**
-* **trivial-utf-8**
+* [secure-random](https://github.com/avodonosov/secure-random)
+* [ironclad](http://method-combination.net/lisp/ironclad/)
+* [split-sequence](https://github.com/sharplispers/split-sequence)
+* [trivial-utf-8](https://common-lisp.net/project/trivial-utf-8/)
 
 ## Author & Maintainer
 
