@@ -5,7 +5,7 @@ CL-BIP39 is a Common Lisp implementation of [BIP-0039](https://github.com/bitcoi
 The library exports the following symbols:
 
 * `generate-bip39-mnemonic` a function that generates a new mnemonic sentence
-* `check-bip39-mnemonic` a function that verifies the validity of a given mnemonic sentence
+* `bip39-mnemonic-p` a function that verifies the validity of a given mnemonic sentence
 * `generate-bip39-seed` a function that generates a binary seed from a given mnemonic sentence (and an optional passphrase)
 
 ## Getting Started
