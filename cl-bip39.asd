@@ -22,9 +22,9 @@
 ;;; WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (asdf:defsystem #:cl-bip39
-  :description "Describe cl-bip39 here"
-  :author "Your Name <your.name@example.com>"
-  :license  "Specify license here"
+  :description "A Common Lisp implementation of BIP-0039"
+  :author "Smith Dhumbumroong <zodmaner@gmail.com>"
+  :license  "MIT"
   :version "0.0.1"
   :serial t
   :depends-on (#:secure-random
