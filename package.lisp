@@ -4,4 +4,4 @@
   (:use #:cl)
   (:export #:generate-bip39-mnemonic
            #:bip39-mnemonic-p
-           #:bip39-mnemonic-to-seed))
+           #:generate-bip39-seed))

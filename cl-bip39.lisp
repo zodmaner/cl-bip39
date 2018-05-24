@@ -86,7 +86,7 @@
          (checksum (sha256 entropy))
          (cs-bit-string (checksum-to-bit-string checksum entropy-size))
          (ent+cs-bit-string (concatenate 'string ent-bit-string cs-bit-string)))
-    (loop :for i :from 0 :below (/ (length ent+cs-bit-string) 11)
+    (loop :for i :below (/ (length ent+cs-bit-string) 11)
        :collect (aref *word-list-english*
                       (parse-integer ent+cs-bit-string
                                      :start (* i 11) :end (* (+ i 1) 11)
@@ -107,7 +107,7 @@
     (string= cs-bit-string
              (checksum-to-bit-string (sha256 entropy) (length ent-bit-string)))))
 
-(defun bip39-mnemonic-to-seed (mnemonic &optional passphase)
+(defun generate-bip39-seed (mnemonic &optional passphase)
   (bip39-mnemonic-p mnemonic)
   (ironclad:byte-array-to-hex-string
    (ironclad:pbkdf2-hash-password (trivial-utf-8:string-to-utf-8-bytes mnemonic)
