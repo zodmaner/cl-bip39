@@ -32,10 +32,12 @@ CL-USER> (cl-bip39:generate-bip39-mnemonic :entropy-size 192)
 And it is also possible to generate a seed with (and without) a passphrase:
 
 ````lisp
-CL-USER> (cl-bip39:generate-bip39-seed "coconut humble brave team ranch fossil soft mixed jewel favorite party tumble evil science february wealth visual labor")
-"a997877d974a221bd6bd86759c12d974742b16657affb56146abd097c48ce790e5276ff87ff3c40778f9f979224ec57ce226a929c84b8e08c2a04f1042ee2909"
-CL-USER> (cl-bip39:generate-bip39-seed "coconut humble brave team ranch fossil soft mixed jewel favorite party tumble evil science february wealth visual labor" "cl-bip39")
-"e7bb643ffad51b944e2f33a142fd6efbc3f99b0550efbf87f2e94b9a5de87767e19bce09bec5174ff48eda67bb03844b16489de334bdd1989c4c4473949ad8d7"
+CL-USER> (defparameter *mnemonic* (cl-bip39:generate-bip39-mnemonic))
+*MNEMONIC*
+CL-USER> (cl-bip39:generate-bip39-seed *mnemonic* "a-passphrase")
+"ff04e5d7adfa23f2df26dfb2d158ed210378058d755d30bf3b18466411b83b42b3ed1f2043abd19310bd40c06c022cf8bc8baf626b1c673df48aa0cd0b27c03a"
+CL-USER> (cl-bip39:generate-bip39-seed *mnemonic*)
+"976282dccc72387628ccc76553bd06472eb4464e77a578132f1f0d0c37290e8f9c567ba7ab0390d175a742555fb55c8de6798c67c9302234803013d47e6651a4"
 ````
 
 ## Limitations
